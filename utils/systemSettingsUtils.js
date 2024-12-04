@@ -31,7 +31,10 @@ const SettingKeys = {
     minDetectionDifference: 'minDetectionDifference',
     minIou: 'minIou',
     minSaveInterval: 'minSaveInterval',
-    skipFrames: 'skipFrames'
+    skipFrames: 'skipFrames',
+    pyHost: 'pyHost',
+    wsPort: 'wsPort',
+    apiPort: 'apiPort',
 };
 module.exports = {
     systemDefaultSettings,
