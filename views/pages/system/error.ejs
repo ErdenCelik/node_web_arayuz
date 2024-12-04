@@ -1,0 +1,27 @@
+<style>
+    body {
+        background-image: url('<%= theme.getAssetPath("media/auth/bg7.jpg") %>');
+    }
+
+    [data-bs-theme="dark"] body {
+        background-image: url('<%= theme.getAssetPath("media/auth/bg7.jpg") %>');
+    }
+</style>
+
+<h1 class="fw-bolder fs-2qx text-gray-900 mb-4">
+    Hatayla Karşılaşıldı
+</h1>
+
+<div class="fw-semibold fs-6 text-gray-500 mb-7">
+    Bir hata oluştu! Lütfen daha sonra tekrar deneyin.
+</div>
+
+<div class="mb-11">
+    <img src='<%= theme.getAssetPath("media/auth/500.png") %>' class="mw-100 mh-300px theme-light-show" alt="" />
+    <img src='<%= theme.getAssetPath("media/auth/500-dark.png") %>' class="mw-100 mh-300px theme-dark-show"
+        alt="" />
+</div>
+
+<div class="mb-0">
+    <a href="/" class="btn btn-sm btn-primary">Geri dön</a>
+</div>

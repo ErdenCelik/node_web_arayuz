@@ -1,0 +1,50 @@
+<div class="modal fade" id="detectionStream" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered mw-650px">
+        <div class="modal-content rounded">
+            <div class="modal-header justify-content-end border-0 pb-0">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <%- theme.getIcon("cross", "fs-1") %>
+                </div>
+            </div>
+            <div class="modal-body p-4">
+                <div class="stream-container">
+                    <img id="streamFeed" style="width: 100%;">
+                    <div id="viewerCount" class="viewer-count">0 izleyici</div>
+                </div>
+
+                <div id="streamStatus" class="status">Bağlantı bekleniyor...</div>
+                <img id="streamFeed" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .stream-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .viewer-count {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 10;
+        backdrop-filter: blur(4px);
+        transition: background-color 0.3s ease;
+    }
+
+    .viewer-count:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #streamFeed {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+</style>

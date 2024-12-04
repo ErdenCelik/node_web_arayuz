@@ -1,0 +1,70 @@
+
+<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+
+	<div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper">
+
+		<div id="kt_app_sidebar_menu_scroll" class="scroll-y my-5 mx-3" data-kt-scroll="true"
+			data-kt-scroll-activate="true" data-kt-scroll-height="auto"
+			data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
+			data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+
+			<div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu"
+				data-kt-menu="true" data-kt-menu-expand="false">
+				<div class="menu-item">
+					<a class="menu-link" href="/dashboard">
+							<span class="menu-icon">
+								<%- theme.getIcon("home", "fs-2" ) %>
+							</span>
+						<span class="menu-title">Ansayfa</span>
+					</a>
+				</div>
+				<% if (hasPermission(user, 'user:read')) { %>
+					<div class="menu-item">
+						<a class="menu-link" href="/user">
+							<span class="menu-icon">
+								<%- theme.getIcon("user", "fs-2" ) %>
+							</span>
+							<span class="menu-title">Kullanıcılar</span>
+						</a>
+					</div>
+				<% } %>
+
+				<% if (hasPermission(user, 'history:view')) { %>
+					<div class="menu-item">
+						<a class="menu-link" href="/detection">
+						<span class="menu-icon">
+							<%- theme.getIcon("element-plus", "fs-2" ) %>
+						</span>
+							<span class="menu-title">Kayıtlar</span>
+						</a>
+					</div>
+				<% } %>
+
+				<% if (hasPermission(user, 'settings:view')) { %>
+					<div class="menu-item">
+						<a class="menu-link" href="/setting">
+						<span class="menu-icon">
+							<%- theme.getIcon("element-plus", "fs-2" ) %>
+						</span>
+							<span class="menu-title">Ayarlar</span>
+						</a>
+					</div>
+				<% } %>
+				<% if (hasPermission(user, 'camera:view:live')) { %>
+					<div class="menu-item">
+						<a class="menu-link" href="javascript:;" id="openStreamBtn">
+						<span class="menu-icon">
+							<%- theme.getIcon("element-plus", "fs-2" ) %>
+						</span>
+							<span class="menu-title">Yayın izle</span>
+						</a>
+					</div>
+				<% } %>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

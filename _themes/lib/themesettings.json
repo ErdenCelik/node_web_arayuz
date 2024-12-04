@@ -1,0 +1,59 @@
+{
+        "name":"",
+        "layoutDir":"/layout",
+        "direction": "ltr",
+        "modeSwitchEnabled": true,
+        "modeDefault": "light",
+        "assetsDir": "/assets/",
+        "iconType": "duotone",
+        "assets": {
+            "favicon": "media/logos/favicon.ico",
+            "fonts": [
+                "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"
+            ],
+            "css" : [
+                "plugins/global/plugins.bundle.css",
+                "css/style.bundle.css"
+            ],
+            "js" : [
+                "plugins/global/plugins.bundle.js",
+                "js/scripts.bundle.js"
+            ]
+        },      
+        "vendors": {
+            "datatables": {
+                "css": [
+                    "plugins/custom/datatables/datatables.bundle.css"
+                ],
+                "js": [
+                    "plugins/custom/datatables/datatables.bundle.js"
+                ]
+            },
+            "flotcharts": {
+                "js": [
+                    "plugins/custom/flotcharts/flotcharts.bundle.js"
+                ]
+            },
+            "fslightbox": {
+                "js": [
+                    "plugins/custom/fslightbox/fslightbox.bundle.js"
+                ]
+            },
+            "jkanban": {
+                "css": [
+                    "plugins/custom/jkanban/jkanban.bundle.css"
+                ],
+                "js": [
+                    "plugins/custom/jkanban/jkanban.bundle.js"
+                ]
+            },
+            "bootstrap-select": {
+                "css": [
+                    "plugins/custom/bootstrap-select/bootstrap-select.bundle.css"
+                ],
+                "js": [
+                    "plugins/custom/bootstrap-select/bootstrap-select.bundle.js"
+                ]
+            }
+        }
+}

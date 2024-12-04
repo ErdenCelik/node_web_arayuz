@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12 mb-md-5 mb-xl-10">
+        <div class="card card-bordered">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3 class="card-title">Grafik</h3>
+                <div class="d-flex align-items-center">
+                    <select class="form-select" id="dataSelector" multiple
+                            data-kt-select2="true" data-close-on-select="false"
+                            data-placeholder="Objeler Seçin" data-allow-clear="true">
+                        <option></option>
+                        <% for (const [key, value] of Object.entries(ObjectTypes)) { %>
+                            <option value="<%= value %>" <% if (value === "person"){%>selected<% } %>>
+                            <%= ObjectTypesInTurkish[key] %>
+                            </option>
+                        <% } %>
+                    </select>
+                    <input type="text" id="dateRangePicker" class="form-control mx-2" style="width: 250px;" placeholder="Tarih aralığı seçin">
+                    <button id="fetchDataButton" class="btn btn-sm btn-primary">Sorgula</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="kt_apexcharts_1" style="height: 500px;"></div>
+            </div>
+        </div>
+    </div>
+</div>

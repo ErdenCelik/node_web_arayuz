@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manisa Büyükşehir Belediyesi</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="<%= theme.getFavicon() %>" />
+    <% theme.getFonts().forEach(function(font){ %>
+        <link rel="stylesheet" href="<%= font %>" />
+    <% }); %>
+    <% theme.getVendors("css").forEach(function(file){ %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <% }); %>
+    <% theme.getGlobalAssets("css").forEach(function(file){ %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <% }); %>
+    <% theme.getCssFiles().forEach(function(file){ %>
+        <link rel="stylesheet" type="text/css" href="<%= theme.getAssetPath(file) %>" />
+    <% }); %>
+</head>
+<body  id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true"  class="app-default" >
+    <%- include(theme.getPartialPath("partials/themeMode/_init.ejs")); %>
+    <%- include(currentLayout); %>
+    <% theme.getModalFiles().forEach(function(file){ %>
+        <%- include(theme.getPartialPath(file)); %>
+    <% }); %>
+    <% theme.getGlobalAssets("js").forEach(function(file){ %>
+        <script src="<%= file %>"></script>
+    <% }); %>
+    <% theme.getVendors("js").forEach(function(file){ %>
+        <script src="<%= file %>"></script>
+    <% }); %>
+    <% theme.getJavascriptFiles().forEach(function(file){ %>
+        <script src='<%= theme.getAssetPath(file) %>'></script>
+    <% }); %>
+</body>
+</html>

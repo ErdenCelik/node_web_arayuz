@@ -1,0 +1,74 @@
+<div class="modal fade" id="userEditCreateModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered mw-650px">
+        <div class="modal-content rounded">
+            <div class="modal-header justify-content-end border-0 pb-0">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <%- theme.getIcon("cross", "fs-1") %>
+                </div>
+            </div>
+            <form class="form w-100" novalidate="novalidate" id="userEditCreateForm">
+                <input type="hidden" name="id" value="">
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="fv-row col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="firstName" placeholder="Adı" autocomplete="off"/>
+                                <label class="required">Adı</label>
+                            </div>
+                        </div>
+                        <div class="fv-row col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="lastName" placeholder="Soyadı" autocomplete="off"/>
+                                <label class="required">Soyadı</label>
+                            </div>
+                        </div>
+                        <div class="fv-row col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="email" placeholder="Eposta" autocomplete="off"/>
+                                <label class="required">Eposta</label>
+                            </div>
+                        </div>
+                        <div class="fv-row col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" name="password" placeholder="Şifre" autocomplete="off"/>
+                                <label>Şifre</label>
+                            </div>
+                        </div>
+                        <div class="fv-row col-md-6 mb-3">
+                            <div class="form-floating">
+                                <select name="roleName" class="form-select">
+                                    <option value="">Rol Seçiniz</option>
+                                    <% for (const [key, value] of Object.entries(roles)) { %>
+                                        <option value="<%= value %>">
+                                            <%= value %>
+                                        </option>
+                                    <% } %>
+                                </select>
+                                <label class="required">Role</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3 d-flex align-items-center ">
+                            <div class="form-check form-check-success form-switch form-check-solid ">
+                                <input class="form-check-input form-check-success" type="checkbox" name="status" id="status" value="1"/>
+                                <label class="form-check-label" for="status">
+                                    Durum
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer border-0 p-3">
+                    <div class="d-flex flex-end flex-row-fluid">
+                        <button type="reset" class="btn btn-sm btn-light me-3" data-bs-dismiss="modal">Kapat</button>
+                        <button type="submit" class="btn btn-sm btn-primary" id="userEditCreateFormSubmit">
+                            Kaydet
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+    <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-md-5 mb-xl-10">
+        <div class="card card-flush">
+            <div class="card-body pt-6">
+                <table id="datatable_users" class="table align-middle table-row-dashed fs-6 gy-5">
+                    <thead>
+                    <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+                        <th class="w-400px">Açıklama</th>
+                        <th class="min-w-200px">Değer</th>
+                        <th class="text-end w-150px">#</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-gray-600 fw-semibold">
+                        <% settings.forEach(setting => { %>
+                            <form id="settingForm<%= setting.id %>">
+                            <input type="hidden" name="id" value="<%= setting.id %>">
+                            <tr>
+                                <td><%= setting.setting_description %></td>
+                                <td>
+                                    <% if (setting.setting_key.trim() === "allowedClasses") { %>
+                                        <select class="form-select" name="value[]" multiple
+                                                data-kt-select2="true" data-close-on-select="false"
+                                                data-placeholder="Objeler Seçin" data-allow-clear="true">
+                                            <option></option>
+                                            <% for (const [key, value] of Object.entries(ObjectTypes)) { %>
+                                                <option value="<%= value %>"
+                                                <% if (setting.setting_value && setting.setting_value.includes(value)) { %>
+                                                        selected
+                                                        <% } %>>
+                                                    <%= ObjectTypesInTurkish[key] %>
+                                                </option>
+                                            <% } %>
+                                        </select>
+                                    <% } else { %>
+                                        <input type="text" name="value" value="<%= setting.setting_value %>" class="form-control">
+                                    <% } %>
+                                </td>
+                                <td><%= setting.type %></td>
+                                <td>
+                                    <button type="button" id="settingFormSubmit<%= setting.id %>" onclick="setting.submitForm(<%= setting.id %>)" class="btn btn-sm btn-success">
+                                        Güncelle
+                                    </button>
+                                </td>
+                            </tr>
+                    </form>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
